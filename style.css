@@ -16,6 +16,7 @@
     --accent-blue: #3875f6;
     --accent-cyan: #06b6d4;
     --accent-purple: #818cf8;
+    --accent-gold: #fbbf24;
     --accent-gradient: linear-gradient(135deg, #4f7df9 0%, #6366f1 100%);
 
     --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -674,6 +675,7 @@ body {
 
 .icon-cyan { background: rgba(6, 182, 212, 0.1); color: var(--accent-cyan); }
 .icon-purple { background: rgba(129, 140, 248, 0.1); color: var(--accent-purple); }
+.icon-gold { background: rgba(251, 191, 36, 0.1); color: var(--accent-gold); }
 
 .award-list {
     display: flex;
