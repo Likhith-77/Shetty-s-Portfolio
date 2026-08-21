@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Likhith Raj R Shetty | Front-End & AEM Developer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient Background Glows -->
+<div class="glow-bg glow-1"></div>
+<div class="glow-bg glow-2"></div>
+<div class="glow-bg glow-3"></div>
+
+<!-- Navigation Bar -->
+<header class="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+            <span class="logo-box">LS</span>
+            <span>Likhith<span class="highlight">.dev</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
+        </nav>
+
+        <button id="menu-toggle" class="menu-btn" aria-label="Toggle Navigation">
+            <i data-lucide="menu"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav" class="mobile-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact" class="mobile-cta">Get in Touch</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="status-dot"></span>
+                Certified AEM Sites Developer & Front-End Specialist[cite: 1]
+            </div>
+
+            <h1 class="hero-title">
+                Building high-impact digital experiences with <span class="gradient-text">AEM & React</span>[cite: 1].
+            </h1>
+
+            <p class="hero-subtitle">
+                I'm <strong>Likhith Raj R Shetty</strong>[cite: 1], an Associate Technical Consultant with 3.5+ years of experience[cite: 1] engineering scalable enterprise web solutions, adaptive forms, and responsive modern interfaces[cite: 1].
+            </p>
+
+            <div class="hero-actions">
+                <a href="#experience" class="btn btn-primary">
+                    Explore Experience <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me <i data-lucide="mail"></i>
+                </a>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>3.5+</h3>
+                    <p>Years Experience[cite: 1]</p>
+                </div>
+                <div class="metric-card">
+                    <h3 class="highlight">AEM 6.5 LTS</h3>
+                    <p>Expertise[cite: 1]</p>
+                </div>
+                <div class="metric-card">
+                    <h3 class="highlight-alt">AD0-E137</h3>
+                    <p>Certified Developer[cite: 1]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                        I specialize in the intersection of enterprise Content Management Systems and modern front-end engineering[cite: 1]. With deep hands-on expertise in Adobe Experience Manager (Sites, Forms, DAM)[cite: 1] alongside React, TypeScript, and modern CSS/SCSS[cite: 1], I deliver scalable, accessible, and high-performance solutions[cite: 1].
+                    </p>
+                    <p>
+                        I hold a Bachelor of Engineering in Mechanical Engineering from Canara Engineering College (2021)[cite: 1] and have evolved into a full-fledged technical consultant delivering client-appreciated enterprise architectures[cite: 1].
+                    </p>
+                    <div class="info-chips">
+                        <span><i data-lucide="map-pin"></i> Mangalore, Karnataka[cite: 1]</span>
+                        <span><i data-lucide="globe"></i> English, Hindi, Kannada[cite: 1]</span>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <h3>Core Competencies</h3>
+                    <ul class="check-list">
+                        <li>
+                            <i data-lucide="check-circle-2"></i>
+                            <div><strong>AEM Ecosystem:</strong> Sites, Adaptive Forms, DAM, Dialogs, HTL, Sling, Content Authoring[cite: 1]</div>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle-2"></i>
+                            <div><strong>Front-End Web:</strong> React, TypeScript, SCSS, HTML5, REST API Integration[cite: 1]</div>
+                        </li>
+                        <li>
+                            <i data-lucide="check-circle-2"></i>
+                            <div><strong>Enterprise Agility:</strong> AI-accelerated workflows, Cross-functional Stakeholder Management, QA & Validations[cite: 1]</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technical Stack</h2>
+                <p class="section-desc">A comprehensive suite of technologies, frameworks, and CMS tools I use[cite: 1].</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="skill-card">
+                    <div class="card-icon icon-cyan">
+                        <i data-lucide="layers"></i>
+                    </div>
+                    <h3>AEM & CMS</h3>
+                    <div class="tags">
+                        <span class="tag">AEM 6.5 LTS[cite: 1]</span>
+                        <span class="tag">AEM Sites[cite: 1]</span>
+                        <span class="tag">AEM Forms[cite: 1]</span>
+                        <span class="tag">Adaptive Forms[cite: 1]</span>
+                        <span class="tag">DAM[cite: 1]</span>
+                        <span class="tag">HTL / Sling[cite: 1]</span>
+                        <span class="tag">XSD Mapping[cite: 1]</span>
+                        <span class="tag">Content Authoring[cite: 1]</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="skill-card">
+                    <div class="card-icon icon-blue">
+                        <i data-lucide="code"></i>
+                    </div>
+                    <h3>Front-End Development</h3>
+                    <div class="tags">
+                        <span class="tag">React[cite: 1]</span>
+                        <span class="tag">TypeScript[cite: 1]</span>
+                        <span class="tag">HTML5 & CSS3[cite: 1]</span>
+                        <span class="tag">SCSS[cite: 1]</span>
+                        <span class="tag">REST APIs[cite: 1]</span>
+                        <span class="tag">Responsive UI[cite: 1]</span>
+                        <span class="tag">DOM Architecture</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="skill-card">
+                    <div class="card-icon icon-purple">
+                        <i data-lucide="cpu"></i>
+                    </div>
+                    <h3>Methods & Testing</h3>
+                    <div class="tags">
+                        <span class="tag">Generative AI Tools[cite: 1]</span>
+                        <span class="tag">Manual QA[cite: 1]</span>
+                        <span class="tag">Regression Testing[cite: 1]</span>
+                        <span class="tag">Field Validations[cite: 1]</span>
+                        <span class="tag">ERP Modules[cite: 1]</span>
+                        <span class="tag">Defect Resolution[cite: 1]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container container-sm">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-desc">Track record of enterprise-grade execution with global clients[cite: 1].</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot dot-cyan"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Associate Technical Consultant</h3>
+                                <span class="company-name">Perficient, Inc. <span class="client-badge">Client: Honeywell</span>[cite: 1]</span>
+                            </div>
+                            <span class="timeline-date">Apr 2023 - Present[cite: 1]</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Delivered end-to-end AEM content authoring within a 4-member agile team, managing creation, editing, and publishing on AEM Sites[cite: 1].</li>
+                            <li>Coordinated project deliverables to guarantee accurate adherence to business requirements and timelines[cite: 1].</li>
+                            <li>Leveraged templates, Sling, HTL, dialogs, and content architecture to optimize asset management and page delivery[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot dot-blue"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Front-End Development Consultant</h3>
+                                <span class="company-name">Perficient, Inc. <span class="client-badge">Client: FORD</span>[cite: 1]</span>
+                            </div>
+                            <span class="timeline-date">Apr 2023 - Present[cite: 1]</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Built responsive web applications in React and TypeScript for a 5-member cross-functional team[cite: 1].</li>
+                            <li>Integrated dynamic REST APIs to power interactive user interfaces and enhance UI performance[cite: 1].</li>
+                            <li>Leveraged Generative AI tools to accelerate front-end development workflows and optimize styling with SCSS/CSS[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot dot-purple"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>AEM Forms Specialist</h3>
+                                <span class="company-name">Perficient, Inc. <span class="client-badge">Client: LPL Financial</span>[cite: 1]</span>
+                            </div>
+                            <span class="timeline-date">Apr 2023 - Present[cite: 1]</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Engineered precise XSD data schema mapping with Adobe AEM Adaptive Forms to ensure seamless data capture[cite: 1].</li>
+                            <li>Implemented AEM content authoring workflows and oversaw digital asset lifecycle[cite: 1].</li>
+                            <li>Collaborated closely with QA to validate complex multi-step form functionality before release[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot dot-slate"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Software Developer</h3>
+                                <span class="company-name">Winman Software LLP[cite: 1]</span>
+                            </div>
+                            <span class="timeline-date">Jan 2022 - Jan 2023[cite: 1]</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Enhanced UI screens for financial ERP modules using HTML & CSS[cite: 1].</li>
+                            <li>Executed comprehensive field validations, functional QA, and regression testing[cite: 1].</li>
+                            <li>Partnered closely with developers to identify, log, and resolve UI defects promptly[cite: 1].</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section section-alt">
+        <div class="container">
+            <div class="achievements-grid">
+                <!-- Certifications -->
+                <div class="award-card">
+                    <div class="award-header">
+                        <div class="award-icon icon-cyan"><i data-lucide="award"></i></div>
+                        <h3>Certifications</h3>
+                    </div>
+                    <div class="award-list">
+                        <div class="award-item">
+                            <h4>AEM Sites Developer - Expert Certification (AD0-E137)[cite: 1]</h4>
+                            <p class="highlight">Adobe Certified Professional[cite: 1]</p>
+                        </div>
+                        <div class="award-item">
+                            <h4>Introduction to Generative AI[cite: 1]</h4>
+                            <p class="highlight-alt">AI Applications & Integration[cite: 1]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Honors -->
+                <div class="award-card">
+                    <div class="award-header">
+                        <div class="award-icon icon-purple"><i data-lucide="trophy"></i></div>
+                        <h3>Honors & Recognition</h3>
+                    </div>
+                    <div class="award-list">
+                        <div class="award-item">
+                            <h4>Extra Mile Award — Q4 2025[cite: 1]</h4>
+                            <p>Awarded recognition for outstanding performance and contribution[cite: 1].</p>
+                        </div>
+                        <div class="award-item">
+                            <h4>Client Appreciation Recognition[cite: 1]</h4>
+                            <p>Recognized by global enterprise clients for successful project delivery and team collaboration[cite: 1].</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container text-center">
+            <h2 class="section-title">Let's Connect & Build</h2>
+            <p class="section-desc max-w-center">
+                Whether you are looking for an AEM specialist, front-end developer, or technical consultant, I'm always open to discussing new opportunities[cite: 1].
+            </p>
+
+            <div class="contact-buttons">
+                <a href="mailto:liki17041999@gmail.com" class="contact-pill">
+                    <i data-lucide="mail" class="icon-cyan-text"></i>
+                    <span>liki17041999@gmail.com[cite: 1]</span>
+                </a>
+                <a href="tel:7019686531" class="contact-pill">
+                    <i data-lucide="phone" class="icon-blue-text"></i>
+                    <span>+91 7019686531[cite: 1]</span>
+                </a>
+                <a href="https://linkedin.com/in/likhith-shetty-965355152/" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                    <i data-lucide="linkedin" class="icon-purple-text"></i>
+                    <span>LinkedIn[cite: 1]</span>
+                </a>
+            </div>
+
+            <footer class="footer-text">
+                &copy; 2026 Likhith Raj R Shetty. All rights reserved. Built with pure HTML & CSS[cite: 1].
+            </footer>
+        </div>
+    </section>
+</main>
+
+<!-- Script for Icons and Mobile Menu -->
+<script>
+    lucide.createIcons();
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    menuToggle.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+    });
+
+    document.querySelectorAll('#mobile-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+        });
+    });
+</script>
+</body>
+</html>
