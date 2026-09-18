@@ -26,13 +26,17 @@
 </head>
 <body>
 
-<!-- Background Ambience & Dot Grid -->
-<div class="dot-pattern-overlay"></div>
+<!-- Cursor Glow (desktop only) -->
+<div class="cursor-glow"></div>
+
+<!-- Background: Particle Network + Gradient Orbs -->
+<canvas id="particle-network"></canvas>
 <div class="glow-bg glow-hero-left"></div>
 <div class="glow-bg glow-hero-right"></div>
 
 <!-- Navigation Bar -->
 <header class="navbar">
+    <div class="scroll-progress-bar"></div>
     <div class="nav-container">
         <a href="#hero" class="nav-logo">
             <span class="logo-box">LS</span>
@@ -79,10 +83,16 @@
 <main>
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="container hero-container">
+        <!-- Floating Parallax Shapes -->
+        <div class="hero-bg-shapes">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
+        <div class="container hero-container">
             <!-- Hero Left Column -->
-            <div class="hero-left">
+            <div class="hero-left hero-entrance">
                 <div class="badge-aem">
                     <svg class="adobe-red-icon" viewBox="0 0 30 26" width="16" height="14" xmlns="http://www.w3.org/2000/svg">
                         <polygon fill="#FA0F00" points="19 0 30 0 30 26" />
@@ -93,7 +103,7 @@
                 </div>
 
                 <h1 class="hero-heading">
-                    Building high-impact digital experiences with <span class="text-aem-react">AEM & React.</span>
+                    Building high-impact digital experiences with <span class="gradient-text">AEM & React.</span>
                 </h1>
 
                 <p class="hero-subtext">
@@ -110,40 +120,38 @@
                 </div>
             </div>
 
-            <!-- Hero Right Column: Card Frame & Vertical Social Dock -->
-            <div class="hero-right">
+            <!-- Hero Right Column -->
+            <div class="hero-right hero-entrance" style="animation-delay: 0.4s;">
                 <div class="hero-card-frame">
                     <div class="profile-img-wrap">
                         <img src="assets/images/Passport_Photo%20.jpeg" alt="Likhith Raj R Shetty" class="profile-img" />
-<!--                        <div class="profile-gradient-overlay"></div>-->
                     </div>
                 </div>
 
                 <!-- Vertical Social Bar -->
                 <div class="vertical-social-bar">
-                    <a href="https://linkedin.com/in/likhith-shetty-965355152/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+                    <a href="https://linkedin.com/in/likhith-shetty-965355152/" target="_blank" rel="noopener noreferrer" class="social-icon-btn magnetic-btn" title="LinkedIn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/>
                         </svg>
                     </a>
 
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn magnetic-btn" title="GitHub">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
                         </svg>
                     </a>
 
-                    <a href="mailto:liki17041999@gmail.com" class="social-icon-btn" title="Email">
+                    <a href="mailto:liki17041999@gmail.com" class="social-icon-btn magnetic-btn" title="Email">
                         <i data-lucide="mail"></i>
                     </a>
                 </div>
             </div>
-
         </div>
 
         <!-- Hero Inline Stats Row -->
         <div class="container">
-            <div class="hero-stats-row">
+            <div class="hero-stats-row reveal">
                 <div class="stat-pill">
                     <div class="stat-icon"><i data-lucide="clock"></i></div>
                     <div class="stat-text">
@@ -169,82 +177,85 @@
                 </div>
 
                 <div class="stat-pill">
-                    <div class="stat-icon"><i data-lucide="refresh-cw"></i></div>
+                    <div class="stat-icon"><i data-lucide="sparkles"></i></div>
                     <div class="stat-text">
-                        <h4>Enterprise Ready</h4>
-                        <p>Scalable Solutions</p>
+                        <h4>AI-Augmented Dev</h4>
+                        <p>Claude, Gemini & ChatGPT</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technologies & Tools Grid -->
+    <!-- Technologies & Tools — Bento Grid -->
     <section id="tools" class="section-tools">
         <div class="container">
-            <div class="tools-header">
-                <span class="code-bracket">&lt;/&gt;</span>
-                <h3>Technologies & Tools I Work With</h3>
+            <div class="section-header reveal">
+                <h2 class="section-title">Technologies & Tools I Work With</h2>
+                <p class="section-desc">Core technologies powering enterprise digital experiences.</p>
             </div>
 
-            <div class="tools-grid">
-                <div class="tool-box">
-                    <div class="tool-logo brand-aem"><i data-lucide="layers"></i></div>
-                    <span class="tool-name">AEM 6.5</span>
+            <div class="bento-grid">
+                <div class="bento-item bento-item--wide reveal">
+                    <div class="bento-icon brand-aem"><i data-lucide="layers"></i></div>
+                    <span class="bento-name">AEM 6.5</span>
+                    <span class="bento-tagline">Enterprise Content Management</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-react"><i data-lucide="atom"></i></div>
-                    <span class="tool-name">React</span>
+                <div class="bento-item bento-item--wide reveal">
+                    <div class="bento-icon brand-react"><i data-lucide="atom"></i></div>
+                    <span class="bento-name">React</span>
+                    <span class="bento-tagline">Component-Driven UI</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-ts">TS</div>
-                    <span class="tool-name">TypeScript</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-ts">TS</div>
+                    <span class="bento-name">TypeScript</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-js">JS</div>
-                    <span class="tool-name">JavaScript</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-js">JS</div>
+                    <span class="bento-name">JavaScript</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-htl">{ }</div>
-                    <span class="tool-name">HTL / Sling</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-htl">{ }</div>
+                    <span class="bento-name">HTL / Sling</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-forms"><i data-lucide="file-text"></i></div>
-                    <span class="tool-name">AEM Forms</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-forms"><i data-lucide="file-text"></i></div>
+                    <span class="bento-name">AEM Forms</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-api"><i data-lucide="webhook"></i></div>
-                    <span class="tool-name">REST APIs</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-api"><i data-lucide="webhook"></i></div>
+                    <span class="bento-name">REST APIs</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-git"><i data-lucide="git-branch"></i></div>
-                    <span class="tool-name">Git</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-git"><i data-lucide="git-branch"></i></div>
+                    <span class="bento-name">Git</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-scss"><i data-lucide="palette"></i></div>
-                    <span class="tool-name">SCSS / CSS3</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-scss"><i data-lucide="palette"></i></div>
+                    <span class="bento-name">SCSS / CSS3</span>
                 </div>
-                <div class="tool-box">
-                    <div class="tool-logo brand-components"><i data-lucide="box"></i></div>
-                    <span class="tool-name">Core Components</span>
+                <div class="bento-item reveal">
+                    <div class="bento-icon brand-components"><i data-lucide="box"></i></div>
+                    <span class="bento-name">Core Components</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Experience Section -->
+    <!-- Work Experience — Alternating Timeline -->
     <section id="experience" class="section">
-        <div class="container container-sm">
-            <div class="section-header">
+        <div class="container">
+            <div class="section-header reveal">
                 <h2 class="section-title">Work Experience & Client Engagements</h2>
                 <p class="section-desc">Demonstrated history of enterprise-level delivery with leading global clients.</p>
             </div>
 
             <div class="timeline">
-                <!-- Honeywell -->
-                <div class="timeline-item">
-                    <div class="timeline-dot dot-cyan"></div>
-                    <div class="timeline-card">
+                <div class="timeline-line"></div>
+
+                <!-- Honeywell — Left -->
+                <div class="timeline-item timeline-item--left">
+                    <div class="timeline-card reveal">
                         <div class="timeline-header">
                             <div>
                                 <h3>Associate Technical Consultant</h3>
@@ -258,12 +269,15 @@
                             <li>Leveraged templates, Sling, HTL, dialogs, and content architecture to optimize asset management and page delivery.</li>
                         </ul>
                     </div>
+                    <div class="timeline-dot dot-cyan"></div>
+                    <div class="timeline-spacer"></div>
                 </div>
 
-                <!-- FORD -->
-                <div class="timeline-item">
+                <!-- FORD — Right -->
+                <div class="timeline-item timeline-item--right">
+                    <div class="timeline-spacer"></div>
                     <div class="timeline-dot dot-blue"></div>
-                    <div class="timeline-card">
+                    <div class="timeline-card reveal">
                         <div class="timeline-header">
                             <div>
                                 <h3>Front-End Development Consultant</h3>
@@ -279,10 +293,9 @@
                     </div>
                 </div>
 
-                <!-- LPL Financial -->
-                <div class="timeline-item">
-                    <div class="timeline-dot dot-purple"></div>
-                    <div class="timeline-card">
+                <!-- LPL Financial — Left -->
+                <div class="timeline-item timeline-item--left">
+                    <div class="timeline-card reveal">
                         <div class="timeline-header">
                             <div>
                                 <h3>AEM Forms Specialist</h3>
@@ -296,12 +309,15 @@
                             <li>Collaborated closely with QA to validate complex multi-step form functionality before release.</li>
                         </ul>
                     </div>
+                    <div class="timeline-dot dot-purple"></div>
+                    <div class="timeline-spacer"></div>
                 </div>
 
-                <!-- Winman Software -->
-                <div class="timeline-item">
+                <!-- Winman Software — Right -->
+                <div class="timeline-item timeline-item--right">
+                    <div class="timeline-spacer"></div>
                     <div class="timeline-dot dot-slate"></div>
-                    <div class="timeline-card">
+                    <div class="timeline-card reveal">
                         <div class="timeline-header">
                             <div>
                                 <h3>Software Developer</h3>
@@ -320,13 +336,18 @@
         </div>
     </section>
 
-    <!-- Certifications & Awards Section -->
+    <!-- Certifications & Awards — Glassmorphism -->
     <section id="achievements" class="section section-alt">
         <div class="container">
-            <div class="achievements-grid">
+            <div class="section-header reveal">
+                <h2 class="section-title">Certifications & Recognition</h2>
+                <p class="section-desc">Professional credentials and awards earned through dedicated work.</p>
+            </div>
 
+            <div class="achievements-grid">
                 <!-- Certifications Card -->
-                <div class="award-card">
+                <div class="award-card reveal">
+                    <div class="card-glow card-glow--blue"></div>
                     <div class="award-header">
                         <div class="award-icon-box">
                             <i data-lucide="award"></i>
@@ -334,11 +355,11 @@
                         <h3>Certifications</h3>
                     </div>
                     <div class="award-list">
-                        <div class="award-item">
+                        <div class="award-item award-item--blue">
                             <h4>AEM Sites Developer - Expert Certification (AD0-E137)</h4>
                             <p class="highlight">Adobe Certified Professional</p>
                         </div>
-                        <div class="award-item">
+                        <div class="award-item award-item--purple">
                             <h4>Introduction to Generative AI</h4>
                             <p class="highlight-alt">AI Applications & Integration</p>
                         </div>
@@ -346,7 +367,8 @@
                 </div>
 
                 <!-- Honors & Recognition Card -->
-                <div class="award-card">
+                <div class="award-card reveal">
+                    <div class="card-glow card-glow--gold"></div>
                     <div class="award-header">
                         <div class="award-icon-box">
                             <i data-lucide="trophy"></i>
@@ -354,30 +376,30 @@
                         <h3>Honors & Recognition</h3>
                     </div>
                     <div class="award-list">
-                        <div class="award-item">
+                        <div class="award-item award-item--gold">
                             <h4>Extra Mile Award — Q4 2025</h4>
                             <p>Awarded recognition for outstanding performance and contribution.</p>
                         </div>
-                        <div class="award-item">
+                        <div class="award-item award-item--cyan">
                             <h4>Client Appreciation Recognition</h4>
                             <p>Recognized by global enterprise clients for successful project delivery, leadership, and collaboration.</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
+        <div class="contact-bg-watermark">Let's Build</div>
         <div class="container text-center">
-            <h2 class="section-title">Let's Connect & Build</h2>
-            <p class="section-desc max-w-center">
+            <h2 class="section-title reveal">Let's Connect & Build</h2>
+            <p class="section-desc max-w-center reveal">
                 Whether you are looking for an AEM specialist, front-end developer, or technical consultant, I'm always open to discussing new opportunities.
             </p>
 
-            <div class="contact-buttons">
+            <div class="contact-buttons reveal">
                 <a href="mailto:liki17041999@gmail.com" class="contact-pill">
                     <i data-lucide="mail" class="icon-cyan-text"></i>
                     <span>liki17041999@gmail.com</span>
@@ -400,10 +422,196 @@
 </main>
 
 <script>
-    // Initialize icons
+    // Initialize Lucide icons
     lucide.createIcons();
 
-    // Mobile navigation toggle
+    // =====================================================================
+    // Particle Network Background
+    // =====================================================================
+    (function() {
+        const canvas = document.getElementById('particle-network');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+
+        const isMobile = window.innerWidth < 768;
+        const PARTICLE_COUNT = isMobile ? 50 : 120;
+        const CONNECTION_DIST = isMobile ? 120 : 180;
+        const MOUSE_DIST = 250;
+
+        let width, height, particles, mouse;
+
+        // Multi-color palette per theme
+        function getThemeColors() {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                return {
+                    dots: [
+                        'rgba(37, 99, 235, 0.6)',
+                        'rgba(99, 102, 241, 0.55)',
+                        'rgba(14, 165, 233, 0.5)',
+                        'rgba(124, 58, 237, 0.45)'
+                    ],
+                    glows: [
+                        'rgba(37, 99, 235, 0.8)',
+                        'rgba(6, 182, 212, 0.7)',
+                        'rgba(124, 58, 237, 0.6)'
+                    ],
+                    line: 'rgba(37, 99, 235, 0.12)',
+                    mouseLine: 'rgba(37, 99, 235, 0.25)'
+                };
+            }
+            return {
+                dots: [
+                    'rgba(59, 130, 246, 0.8)',
+                    'rgba(129, 140, 248, 0.7)',
+                    'rgba(6, 182, 212, 0.7)',
+                    'rgba(124, 58, 237, 0.6)'
+                ],
+                glows: [
+                    'rgba(6, 182, 212, 0.9)',
+                    'rgba(59, 130, 246, 0.85)',
+                    'rgba(129, 140, 248, 0.8)'
+                ],
+                line: 'rgba(59, 130, 246, 0.15)',
+                mouseLine: 'rgba(6, 182, 212, 0.3)'
+            };
+        }
+
+        let colors = getThemeColors();
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        function createParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                const isGlow = Math.random() < 0.2;
+                const speed = 0.15 + Math.random() * 0.35;
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * speed,
+                    vy: (Math.random() - 0.5) * speed,
+                    r: isGlow ? (Math.random() * 2.5 + 2) : (Math.random() * 1.8 + 0.8),
+                    isGlow: isGlow,
+                    colorIndex: Math.floor(Math.random() * 4),
+                    glowIndex: Math.floor(Math.random() * 3),
+                    pulse: Math.random() * Math.PI * 2
+                });
+            }
+        }
+
+        mouse = { x: -9999, y: -9999 };
+
+        if (!('ontouchstart' in window)) {
+            document.addEventListener('mousemove', function(e) {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+        }
+
+        let time = 0;
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+            time += 0.01;
+
+            for (let i = 0; i < particles.length; i++) {
+                const a = particles[i];
+
+                a.x += a.vx;
+                a.y += a.vy;
+
+                if (a.x < 0) a.x = width;
+                if (a.x > width) a.x = 0;
+                if (a.y < 0) a.y = height;
+                if (a.y > height) a.y = 0;
+
+                // Pulsing radius for glow particles
+                let drawR = a.r;
+                if (a.isGlow) {
+                    drawR = a.r + Math.sin(time * 2 + a.pulse) * 0.8;
+                }
+
+                // Draw particle
+                if (a.isGlow) {
+                    // Glow particles get a soft halo
+                    ctx.beginPath();
+                    ctx.arc(a.x, a.y, drawR * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = colors.glows[a.glowIndex].replace(/[\d.]+\)$/, '0.1)');
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.arc(a.x, a.y, drawR, 0, Math.PI * 2);
+                    ctx.fillStyle = colors.glows[a.glowIndex];
+                    ctx.fill();
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(a.x, a.y, drawR, 0, Math.PI * 2);
+                    ctx.fillStyle = colors.dots[a.colorIndex];
+                    ctx.fill();
+                }
+
+                // Connect to nearby particles
+                for (let j = i + 1; j < particles.length; j++) {
+                    const b = particles[j];
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < CONNECTION_DIST) {
+                        const opacity = 1 - dist / CONNECTION_DIST;
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.strokeStyle = colors.line;
+                        ctx.globalAlpha = opacity;
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+
+                // Connect to mouse with thicker, brighter lines
+                const mdx = a.x - mouse.x;
+                const mdy = a.y - mouse.y;
+                const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+                if (mDist < MOUSE_DIST) {
+                    const opacity = 1 - mDist / MOUSE_DIST;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.strokeStyle = colors.mouseLine;
+                    ctx.globalAlpha = opacity;
+                    ctx.lineWidth = 1.2;
+                    ctx.stroke();
+                    ctx.globalAlpha = 1;
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        resize();
+        createParticles();
+        draw();
+
+        window.addEventListener('resize', function() {
+            resize();
+            createParticles();
+        });
+
+        const observer = new MutationObserver(function() {
+            colors = getThemeColors();
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
+
+    // =====================================================================
+    // Mobile Navigation Toggle
+    // =====================================================================
     const menuToggle = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
 
@@ -419,10 +627,14 @@
         });
     }
 
-    // Light / Dark Mode Toggle Logic
+    // =====================================================================
+    // Light / Dark Mode Toggle
+    // =====================================================================
     const themeToggleBtn = document.getElementById('theme-toggle');
 
     themeToggleBtn?.addEventListener('click', () => {
+        document.documentElement.classList.add('theme-transitioning');
+
         const isLight = document.documentElement.getAttribute('data-theme') === 'light';
         if (isLight) {
             document.documentElement.removeAttribute('data-theme');
@@ -431,6 +643,153 @@
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem('portfolio-theme', 'light');
         }
+
+        setTimeout(() => {
+            document.documentElement.classList.remove('theme-transitioning');
+        }, 500);
+    });
+
+    // =====================================================================
+    // Scroll Progress Bar + Navbar Scrolled State
+    // =====================================================================
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    const navbar = document.querySelector('.navbar');
+    const parallaxShapes = document.querySelectorAll('.hero-bg-shapes div');
+    let scrollTicking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                const scrollTop = document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+                // Progress bar
+                if (progressBar && scrollHeight > 0) {
+                    progressBar.style.width = (scrollTop / scrollHeight * 100) + '%';
+                }
+
+                // Navbar scrolled state
+                if (navbar) {
+                    navbar.classList.toggle('scrolled', scrollTop > 50);
+                }
+
+                // Parallax on floating shapes
+                parallaxShapes.forEach((el, i) => {
+                    const speed = 0.05 + (i * 0.02);
+                    el.style.transform = 'translateY(' + (scrollTop * speed) + 'px)';
+                });
+
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    });
+
+    // =====================================================================
+    // Active Nav Link Tracking via IntersectionObserver
+    // =====================================================================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active',
+                        link.getAttribute('href') === '#' + entry.target.id);
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // =====================================================================
+    // Scroll Reveal Animations
+    // =====================================================================
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+        // Stagger bento items
+        if (el.classList.contains('bento-item')) {
+            el.style.transitionDelay = (index * 0.06) + 's';
+        }
+        revealObserver.observe(el);
+    });
+
+    // =====================================================================
+    // Counter Animation (Stats Row)
+    // =====================================================================
+    function animateCounters() {
+        document.querySelectorAll('[data-count]').forEach(el => {
+            const target = parseFloat(el.dataset.count);
+            const suffix = el.dataset.suffix || '';
+            const duration = 2000;
+            const start = performance.now();
+
+            function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const value = target * eased;
+                el.textContent = (target % 1 === 0 ? Math.round(value) : value.toFixed(1)) + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+
+            requestAnimationFrame(tick);
+        });
+    }
+
+    const statsRow = document.querySelector('.hero-stats-row');
+    if (statsRow) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        counterObserver.observe(statsRow);
+    }
+
+    // =====================================================================
+    // Cursor Glow Effect (desktop only)
+    // =====================================================================
+    const cursorGlow = document.querySelector('.cursor-glow');
+    if (cursorGlow && !('ontouchstart' in window)) {
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.transform = 'translate(' + (e.clientX - 300) + 'px, ' + (e.clientY - 300) + 'px)';
+        });
+    } else if (cursorGlow) {
+        cursorGlow.style.display = 'none';
+    }
+
+    // =====================================================================
+    // Magnetic Hover Effect
+    // =====================================================================
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = 'translate(' + (x * 0.25) + 'px, ' + (y * 0.25) + 'px)';
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+            btn.style.transform = 'translate(0, 0)';
+        });
+
+        btn.addEventListener('mouseenter', () => {
+            btn.style.transition = 'none';
+        });
     });
 </script>
 </body>
